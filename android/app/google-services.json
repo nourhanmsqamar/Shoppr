@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1047553211533",
+    "project_id": "shoppr-b6a4a",
+    "storage_bucket": "shoppr-b6a4a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047553211533:android:b5e46d799bbd32988f76c4",
+        "android_client_info": {
+          "package_name": "com.example.shoppr"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoi7p2FpBazwQ-4L2bs2Hd3QRYtS5Czuk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
