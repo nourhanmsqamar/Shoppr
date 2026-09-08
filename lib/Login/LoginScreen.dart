@@ -82,15 +82,19 @@ class LoginScreen extends StatelessWidget {
                   children: [
 
                     ///====================banner====================
-                    Image.asset(
-                      "assets/images/Signup.png",
-                      height: 150,
-                      fit: BoxFit.cover,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.asset(
+                        "assets/images/Signup.png",
+                        height: 140,
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
                     ),
 
                     ///=============================================
 
-                    const SizedBox(height: 45),
+                     SizedBox(height: 45),
 
                     ///====================email=====================
                     CustomTextField(
@@ -101,7 +105,7 @@ class LoginScreen extends StatelessWidget {
 
                     ///=============================================
 
-                    const SizedBox(height: 16),
+                     SizedBox(height: 16),
 
                     ///====================password==================
                     CustomTextField(

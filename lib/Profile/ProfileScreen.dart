@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shoppr/Profile/widgets/ProfileItem.dart';
 
+import '../Login/LoginScreen.dart';
+
 class Profilescreen extends StatelessWidget {
   const Profilescreen({super.key});
 
@@ -40,13 +42,18 @@ class Profilescreen extends StatelessWidget {
             ///==================================================
 
             SizedBox(height: 60,),
-                Text(
-                  'Sign Out',
-                  style: TextStyle(
-                    color: Color(0xffF55F1F),
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+            GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginScreen()));
+              },
+              child: const Text(
+                'Sign Out',
+                style: TextStyle(
+                  color: Color(0xffF55F1F),
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
             ),
           ],
 

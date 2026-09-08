@@ -15,12 +15,12 @@ class HomeScreen extends StatelessWidget {
   ];
 
   final List<String> prices = const [
-    "\$40",
-    "\$430",
-    "\$330",
-    "\$333",
-    "\$50",
-    "\$400",
+    "40",
+    "430",
+    "330",
+    "333",
+    "50",
+    "400",
   ];
 
   final List<String> images = const [
@@ -31,14 +31,12 @@ class HomeScreen extends StatelessWidget {
     "assets/images/jacket.png",
     "assets/images/hoodie.png",
   ];
-
   ///========================================================
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -46,26 +44,18 @@ class HomeScreen extends StatelessWidget {
               horizontal: 16,
               vertical: 15,
             ),
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 ///====================user data==================
                 Row(
                   children: [
                     const CircleAvatar(
                       radius: 25,
                       backgroundColor: Color(0xffE0E0E0),
-                      child: Icon(
-                        Icons.person,
-                        color: Colors.white,
-                        size: 30,
-                      ),
+                      backgroundImage: AssetImage("assets/images/profile.png"),
                     ),
-
                     const SizedBox(width: 10),
-
                     const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -76,9 +66,8 @@ class HomeScreen extends StatelessWidget {
                             color: Colors.grey,
                           ),
                         ),
-
                         Text(
-                          "John William",
+                          "User",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -87,19 +76,17 @@ class HomeScreen extends StatelessWidget {
                       ],
                     ),
 
-                    const Spacer(),
-
-                    CircleAvatar(
+                      SizedBox(width: 180,),
+                     CircleAvatar(
                       radius: 20,
                       backgroundColor: Color(0xffF7F7F7),
                       child: Icon(
                         Icons.notifications_none,
-                        color: Colors.grey,
+                        color: Colors.black87,
                       ),
                     ),
                   ],
                 ),
-
                 ///================================================
 
                 const SizedBox(height: 20),
@@ -111,7 +98,6 @@ class HomeScreen extends StatelessWidget {
                     color: const Color(0xffF7F7F7),
                     borderRadius: BorderRadius.circular(25),
                   ),
-
                   child: const TextField(
                     decoration: InputDecoration(
                       prefixIcon: Icon(
@@ -119,29 +105,29 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       hintText: "Search here",
+                      hintStyle: TextStyle(color: Colors.grey),
                       border: InputBorder.none,
+                      contentPadding: EdgeInsets.symmetric(vertical: 12),
                     ),
                   ),
                 ),
-
                 ///================================================
 
-                const SizedBox(height: 20),
+                 SizedBox(height: 20),
 
                 ///====================banner======================
                 ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.asset(
                     "assets/images/Signup.png",
-                    height: 120,
+                    height: 140,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
                 ),
-
                 ///================================================
 
-                const SizedBox(height: 8),
+                 SizedBox(height: 12),
 
                 ///====================dots========================
                 Row(
@@ -155,9 +141,7 @@ class HomeScreen extends StatelessWidget {
                         color: Colors.grey,
                       ),
                     ),
-
                     const SizedBox(width: 5),
-
                     Container(
                       width: 7,
                       height: 7,
@@ -166,9 +150,16 @@ class HomeScreen extends StatelessWidget {
                         color: Color(0xff5E5CE6),
                       ),
                     ),
-
                     const SizedBox(width: 5),
-
+                    Container(
+                      width: 7,
+                      height: 7,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    const SizedBox(width: 5),
                     Container(
                       width: 7,
                       height: 7,
@@ -179,52 +170,45 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 ///================================================
 
-                const SizedBox(height: 15),
+                 SizedBox(height: 15),
 
                 ///====================featured title=============
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
+                  children:  [
+                    Text(
                       "Featured",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                     Text(
                       "See All",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         color: Color(0xff5E5CE6),
                       ),
                     ),
                   ],
                 ),
-
                 ///================================================
 
-                const SizedBox(height: 12),
+                 SizedBox(height: 12),
 
                 ///====================featured products==========
                 SizedBox(
-                  height: 205,
-
+                  height: 220,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 4,
-
+                    itemCount: titles.length,
                     itemBuilder: (context, index) {
                       return SizedBox(
                         width: 150,
-
                         child: Padding(
                           padding: const EdgeInsets.only(right: 12),
-
                           child: ProductItem(
                             image: images[index],
                             title: titles[index],
@@ -235,7 +219,6 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                 ),
-
                 ///================================================
 
                 const SizedBox(height: 15),
@@ -243,44 +226,38 @@ class HomeScreen extends StatelessWidget {
                 ///====================popular title==============
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
+                  children: const [
+                    Text(
                       "Most Popular",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-
                     Text(
                       "See All",
                       style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 14,
                         color: Color(0xff5E5CE6),
                       ),
                     ),
                   ],
                 ),
-
                 ///================================================
 
                 const SizedBox(height: 12),
 
                 ///====================popular products============
                 SizedBox(
-                  height: 205,
-
+                  height: 220,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 6,
-
                     itemBuilder: (context, index) {
                       return SizedBox(
                         width: 150,
-
                         child: Padding(
                           padding: const EdgeInsets.only(right: 12),
-
                           child: ProductItem(
                             image: images[index],
                             title: titles[index],
@@ -291,9 +268,7 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                 ),
-
                 ///================================================
-
               ],
             ),
           ),

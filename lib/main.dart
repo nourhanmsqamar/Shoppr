@@ -1,10 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'Home/HomeScreen.dart';
+import 'Login/LoginScreen.dart';
 import 'NavigationBar/NavigationScreen.dart';
 import 'ProductDetails/ProductDetailsScreen.dart';
 import 'ProductList/ProductListScreen.dart';
 import 'Profile/ProfileScreen.dart';
+import 'Search/ExploreScreen.dart';
+import 'Search/SearchScreen.dart';
 import 'SignUp/SignUpScreen.dart';
+import 'Splash/SplashScreen.dart';
 import 'firebase_options.dart';
 
 void main() async {
@@ -43,7 +48,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ProductDetailsScreen(),
+      home: SplashScreen(),
     );
   }
 }

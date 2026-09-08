@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../ProductDetails/ProductDetailsScreen.dart';
+
 class ProductItem extends StatelessWidget {
   final String image;
   final String title;
@@ -14,10 +16,14 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-       ///==================image+favorite======
+    return GestureDetector(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const ProductDetailsScreen()));
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ///==================image+favorite======
         Stack(
           children: [
             ClipRRect(
@@ -38,9 +44,9 @@ class ProductItem extends StatelessWidget {
         ),
         ///===============================================
 
-        const SizedBox(height: 8),
+         SizedBox(height: 8),
 
-       ///========================data(name/price)=================
+       ///========================data=================
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -75,6 +81,7 @@ class ProductItem extends StatelessWidget {
           ],
         ),
       ],
-    );
+    ),
+        );
   }
 }

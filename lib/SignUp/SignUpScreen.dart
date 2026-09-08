@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shoppr/SignUp/SignUPState.dart';
 import 'package:shoppr/SignUp/SignUpCubit.dart';
-
 import '../Core/widgets/CustomButton.dart';
 import '../Core/widgets/CustomTextField.dart';
+import '../NavigationBar/NavigationScreen.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
@@ -28,6 +28,12 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
       );
+      ///==================== Navigate to Home ======================
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) =>  NavigationScreen()),
+      );
+      ///==========================================================
     }
     if (state is RegisterFailure) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -40,8 +46,7 @@ class SignUpScreen extends StatelessWidget {
         ),
       );
     }
-
-
+    
 
   },
   builder: (context, state) {
@@ -60,7 +65,15 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Image.asset("assets/images/Signup.png" ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "assets/images/Signup.png",
+                  height: 140,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                ),
+              ),
               SizedBox(height: 32),
               ///====================emailfiled======================
               CustomTextField(
@@ -98,7 +111,7 @@ class SignUpScreen extends StatelessWidget {
               ///===================signup buttuon===============
               SizedBox(height: 35,),
               CustomButton(text: "Create Account", onPressed: () {
-                //cubit.signup();
+                cubit.signup();
               }),
              /// ====================================================
 
@@ -114,10 +127,15 @@ class SignUpScreen extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                    Text(
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text(
                       'Log In ',
                       style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                     ),
+                  ),
 
                 ],
               ),

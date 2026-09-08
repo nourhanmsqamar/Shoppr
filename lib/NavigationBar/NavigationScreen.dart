@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-
+import '../Home/HomeScreen.dart';
 import '../ProductList/ProductListScreen.dart';
 import '../Profile/ProfileScreen.dart';
+import '../Search/ExploreScreen.dart';
+import '../Search/SearchScreen.dart';
 
 
 class NavigationScreen extends StatefulWidget {
@@ -17,8 +19,8 @@ class _NavScreenState extends State<NavigationScreen> {
 
   ///========== screens in home ======================
   List<Widget> screens = [
-    // Homescreen(),
-    //search(),
+    HomeScreen(),
+    SearchScreen(),
     ProductListScreen(),
     Profilescreen(),
   ];
